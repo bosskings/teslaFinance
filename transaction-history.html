@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Deposit</title>
+    
+      <!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- side Nav -->
+    <div class="hidden xl:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#1e1e1e] text-white p-6 pt-10 shadow-lg z-40">
+      <a href="/dashboard" class="text-3xl font-bold mb-10">
+        Stock
+      </a>
+      <nav class="flex flex-col gap-3">
+        <a href="/dashboard"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+          Dashboard
+        </a>
+        <a href="/stocks"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-stock-line"></i></span>
+          Stocks
+        </a>
+        <a href="/cars"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+          cars
+        </a>
+        <a href="/rewards"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+          Rewards
+        </a>
+        <a href="/transactions"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+          Transactions
+        </a>
+        <a href="/logout"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base text-gray-300 hover:bg-gray-700 hover:text-white transition-colors w-full text-left">
+          <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+          Logout
+		</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="fixed bottom-0 w-full bg-[#1e1e1e] text-white flex justify-around py-2 lg:hidden z-50">
+      <a href="/dashboard" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+        <!-- <span>Dashboard</span> -->
+      </a>
+      <a href="/stocks" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-stock-line"></i></span>
+        <!-- <span>Stocks</span> -->
+      </a>
+      <a href="/cars" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+        <!-- <span>cars</span> -->
+      </a>
+      <a href="/rewards" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+        <!-- <span>Rewards</span> -->
+      </a>
+      <a href="/transactions"
+        class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+        <!-- <span>Transactions</span> -->
+      </a>
+      <button class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+        <!-- <span>Logout</span> -->
+      </button>
+    </div>
+
+
+      <!-- Main Content -->
+      <div class="w-full px-4 md:px-4 xl:ml-[18%] xl:w-[80%] lg:px-10 xl:px-4 pt-10 pb-10 flex flex-col bg-white min-h-screen  bg-gray-100">
+      
+        <div class="bg-white shadow-lg rounded-xl p-4 sm:p-6 w-full max-w-6xl mx-auto">
+	        <h2 class="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6">
+	          Transaction History
+	        </h2>
+
+	        <!-- Filter section -->
+	        <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+	          <!-- Dropdown for small screens -->
+	          <div class="sm:hidden">
+	            <select class="border border-gray-300 rounded-md px-3 py-2 w-full">
+	              <option value="All" selected>All</option>
+	              <option value="Deposit">Deposit</option>
+	              <option value="Withdrawal">Withdrawal</option>
+	            </select>
+	          </div>
+
+	          <!-- Buttons for larger screens -->
+	          <div class="hidden sm:flex gap-2">
+	            <button class="px-4 py-2 rounded-md font-medium text-sm bg-blue-600 text-white">All</button>
+	            <button class="px-4 py-2 rounded-md font-medium text-sm bg-gray-200 text-gray-700 hover:bg-gray-300">Deposit</button>
+	            <button class="px-4 py-2 rounded-md font-medium text-sm bg-gray-200 text-gray-700 hover:bg-gray-300">Withdrawal</button>
+	          </div>
+	        </div>
+
+	        <!-- Table for md+ screens -->
+	        <div class="hidden md:block overflow-x-auto">
+	          <table class="w-full border-collapse text-sm sm:text-base min-w-[500px]">
+	            <thead>
+	              <tr class="bg-gray-200 text-gray-700 text-left">
+	                <th class="px-2 sm:px-4 py-2">Type</th>
+	                <th class="px-2 sm:px-4 py-2">Amount</th>
+	                <th class="px-2 sm:px-4 py-2">Method</th>
+	                <th class="px-2 sm:px-4 py-2">Status</th>
+	                <th class="px-2 sm:px-4 py-2">Date</th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	              <!-- Example Transaction Row: (replace with dynamic rows as needed) -->
+	              <tr class="border-b hover:bg-gray-50">
+	                <td class="px-2 sm:px-4 py-2">
+	                  <span class="px-2 py-1 rounded-md text-xs sm:text-sm font-semibold bg-green-100 text-green-700">
+	                    Deposit
+	                  </span>
+	                </td>
+	                <td class="px-2 sm:px-4 py-2">$500</td>
+	                <td class="px-2 sm:px-4 py-2">Bank</td>
+	                <td class="px-2 sm:px-4 py-2">
+	                  <span class="px-2 py-1 rounded-md text-xs sm:text-sm bg-green-100 text-green-700">
+	                    Completed
+	                  </span>
+	                </td>
+	                <td class="px-2 sm:px-4 py-2 text-gray-600">2024-06-01</td>
+	              </tr>
+	              <!-- If no transactions: -->
+	              <tr>
+	                <td
+	                  colspan="5"
+	                  class="px-2 sm:px-4 py-6 text-center text-gray-500"
+	                >
+	                  No transactions found.
+	                </td>
+	              </tr>
+	            </tbody>
+	          </table>
+	        </div>
+
+	        <!-- Mobile cards -->
+	        <div class="md:hidden flex flex-col gap-4">
+	          <!-- Example Transaction Card: (replace with dynamic cards as needed) -->
+	          <div class="border rounded-lg p-4 shadow-sm bg-gray-50">
+	            <div class="flex justify-between mb-2 items-center">
+	              <span class="px-2 py-2 rounded-md text-xs font-semibold bg-green-100 text-green-700">
+	                Deposit
+	              </span>
+	              <span class="text-gray-600 text-xs">2024-06-01</span>
+	            </div>
+	            <div class="flex justify-between mb-1">
+	              <span class="font-medium">Amount:</span>
+	              <span>$500</span>
+	            </div>
+	            <div class="flex justify-between mb-1">
+	              <span class="font-medium">Method:</span>
+	              <span>Bank</span>
+	            </div>
+	            <div class="flex justify-between">
+	              <span class="font-medium">Status:</span>
+	              <span class="px-2 py-1 rounded-md text-xs bg-green-100 text-green-700">
+	                Completed
+	              </span>
+	            </div>
+	          </div>
+
+	          <!-- If no transactions: -->
+	          <div class="text-center text-gray-500 py-6">
+	            No transactions found.
+	          </div>
+	        </div>
+	      </div>
+
+      </div>
+
+      <!-- footer -->
+      <footer class="bg-white border-t border-gray-200 mt-10">
+        <div class="max-w-[1920px] w-full mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+          <!-- Logo -->
+          <div class="mb-4 md:mb-0">
+            <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+          </div>
+
+          <!-- Links -->
+          <ul class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-600">
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/">Home</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/stocks">Stocks</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="cars">Vehicles</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/features">Features</a>
+            </li>
+            
+          </ul>
+
+          <!-- Copyright -->
+          <div id="c" class="mt-4 md:mt-0 text-gray-500 text-xs md:text-sm">
+	        &copy; 2024 Stock. All rights reserved.
+	      </div>
+		  <script>
+			const e=document.getElementById('c');e.innerHTML=e.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+		  </script>
+        </div>
+      </footer>
+
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
+

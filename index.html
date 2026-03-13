@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Tesla Stocks</title>
+		<!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+		<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+
+		<!-- Owl Carousel Slider.. -->
+		<link rel="stylesheet" href="owlcarousel/dist/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="owlcarousel/dist/assets/owl.theme.default.min.css">
+	</head>
+	<body>
+		<!-- navbar.html -->
+		<nav class="bg-white shadow-md relative">
+			<!-- Centered Container -->
+			<div class="max-w-[1920px] w-full mx-auto flex items-center justify-between px-6 py-2 rounded-full">
+				<!-- Logo -->
+				<div>
+					<h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Tesla-Stocks</h1>
+				</div>
+				<!-- Desktop Nav Links -->
+				<ul class="hidden md:flex items-center gap-8 text-sm">
+					<li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+						<a href="/">Home</a>
+					</li>
+					<li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+						<a href="/stocks">Stocks</a>
+					</li>
+					<li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+						<a href="cars">Vehicles</a>
+					</li>
+					<li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+						<a href="/features">Features</a>
+					</li>
+				</ul>
+				<!-- Social Icons -->
+				<div class="hidden md:flex items-center gap-5">
+					<a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out">
+						<i class="ri-user-3-line" style="font-size: 1.5em;"></i>
+					</a>
+				</div>
+				<!-- Mobile Hamburger -->
+				<div class="md:hidden flex items-center">
+					<button id="navbar-menu-toggle">
+						<i id="menu-icon" class="ri-menu-line" style="font-size: 1.75em;"></i>
+					</button>
+				</div>
+				<!-- Mobile Dropdown Menu -->
+				<div id="mobile-dropdown" class="hidden absolute top-full right-4 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg flex-col py-2 z-50">
+					<a href="/" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Home</a>
+					<a href="/stocks" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Stocks</a>
+					<a href="/cars" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Vehicles</a>
+					<a href="/features" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Features</a>
+					<div class="px-4 py-2 mt-2 border-t border-gray-200">
+						<a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out inline-block">
+							<i class="ri-user-3-line" style="font-size: 1.25em;"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- image slider section -->
+		<header>
+			<div class="owl-carousel">
+
+				<div class="relative w-full h-[90vh] md:h-[95vh] mb-24 overflow-hidden" style="opacity: 1; transition: opacity 1.5s;">
+				
+
+					<!-- Slide background image (first slide as static for plain HTML) -->
+					  <div class="absolute w-full h-full" style="background-image: url('images/homepage/storms-happen-desktop.avif'); background-size: cover; background-position: center; opacity: 1; transition: opacity 1s;">
+					   <!-- Overlay -->
+					   <div class="absolute inset-0 bg-black/40"></div>
+					   <!-- Content -->
+					   
+					   <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-12">
+						  <!-- Title -->
+						  <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold drop-shadow-lg">Model 3</h1>
+						  <!-- Description -->
+						  <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white font-semibold underline drop-shadow-md">20% APR available</p>
+						  <!-- Buttons -->
+						  <div class="flex flex-col sm:flex-row gap-6 mt-6">
+							<div>
+								 <a href="/signup" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-[#2853c8] text-white font-semibold rounded-md hover:bg-[#2043a2] transition text-sm sm:text-base" > Order Now</a>
+								</div>
+								<div>
+								 <a href="/cars" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-white text-black font-semibold rounded-md hover:bg-[#ffffffc6] transition text-sm sm:text-base">View cars</a>
+								</div>
+						  </div>
+					   </div>
+					</div>
+				</div>
+
+				<div class="relative w-full h-[90vh] md:h-[95vh] mb-24 overflow-hidden" style="opacity: 1; transition: opacity 1.5s;">
+
+					<!-- Slide background image (first slide as static for plain HTML) -->
+					<div class="absolute w-full h-full" style="background-image: url('images/homepage/sleek-durable-solar.avif'); background-size: cover; background-position: center; opacity: 1; transition: opacity 1s;">
+						<!-- Overlay -->
+						<div class="absolute inset-0 bg-black/40"></div>
+						<!-- Content -->
+						
+						<div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-12">
+						   <!-- Title -->
+						   <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold drop-shadow-lg">Model 3</h1>
+						   <!-- Description -->
+						   <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white font-semibold underline drop-shadow-md">20% APR available</p>
+						   <!-- Buttons -->
+						   <div class="flex flex-col sm:flex-row gap-6 mt-6">
+							 <div>
+								  <a href="/signup" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-[#2853c8] text-white font-semibold rounded-md hover:bg-[#2043a2] transition text-sm sm:text-base" > Order Now</a>
+								 </div>
+								 <div>
+								  <a href="/cars" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-white text-black font-semibold rounded-md hover:bg-[#ffffffc6] transition text-sm sm:text-base">View cars</a>
+								 </div>
+						   </div>
+						</div>
+					 </div>
+				</div>
+				
+				
+				<div class="relative w-full h-[90vh] md:h-[95vh] mb-24 overflow-hidden" style="opacity: 1; transition: opacity 1.5s;">
+
+					<!-- Slide background image (first slide as static for plain HTML) -->
+					<div class="absolute w-full h-full" style="background-image: url('images/homepage/price-solar-desktop.avif'); background-size: cover; background-position: center; opacity: 1; transition: opacity 1s;">
+						<!-- Overlay -->
+						<div class="absolute inset-0 bg-black/40"></div>
+						<!-- Content -->
+						
+						<div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 md:px-12">
+						   <!-- Title -->
+						   <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold drop-shadow-lg">Model 3</h1>
+						   <!-- Description -->
+						   <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-xl text-white font-semibold underline drop-shadow-md">20% APR available</p>
+						   <!-- Buttons -->
+						   <div class="flex flex-col sm:flex-row gap-6 mt-6">
+							 <div>
+								  <a href="/signup" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-[#2853c8] text-white font-semibold rounded-md hover:bg-[#2043a2] transition text-sm sm:text-base" > Order Now</a>
+								 </div>
+								 <div>
+								  <a href="/cars" class="w-full sm:w-auto px-6 sm:px-12 py-3 bg-white text-black font-semibold rounded-md hover:bg-[#ffffffc6] transition text-sm sm:text-base">View cars</a>
+								 </div>
+						   </div>
+						</div>
+					 </div>
+				</div>
+
+
+			</div>
+
+		</header>
+
+		<main>
+			<div class="hidden md:block px-14 -mt-12 mb-5 relative">
+			  <!-- Scrollable cards -->
+			  <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 no-scrollbar">
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/car1.jpg"
+			        alt="Model 3"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <p class="absolute top-4 left-5 text-xl font-bold text-white">Sports Sedan</p>
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Model 3</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">2.99% APR Available</p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Order Now
+			            </button>
+			          </a>
+			          <a href="/cars">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-[#ffffffc6] transition">
+			              View cars
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/car2.jpg"
+			        alt="Cybertruck"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <p class="absolute top-4 left-5 text-xl font-bold text-white">Utility Truck</p>
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Cybertruck</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">Make From $699/mo for a Limited Time</p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Order Now
+			            </button>
+			          </a>
+			          <a href="/cars">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-[#ffffffc6] transition">
+			              View cars
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/car3.jpg"
+			        alt="Model X"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <p class="absolute top-4 left-5 text-xl font-bold text-white">Luxury SUV</p>
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Model X</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">Make From $899/mo</p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Order Now
+			            </button>
+			          </a>
+			          <a href="/cars">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-[#ffffffc6] transition">
+			              View cars
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/car4.jpg"
+			        alt="Model Y"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <p class="absolute top-4 left-5 text-xl font-bold text-white">Compact SUV</p>
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Model Y</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">Make From $499/mo </p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Order Now
+			            </button>
+			          </a>
+			          <a href="/cars">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-[#ffffffc6] transition">
+			              View cars
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <!-- Dots (non-interactive in pure HTML) -->
+			  <div class="flex justify-center mt-4 gap-2">
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-800 scale-110"></button>
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-400"></button>
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-400"></button>
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-400"></button>
+			  </div>
+			</div>
+
+
+
+			<!-- current prices section -->
+			<div class="px-4 sm:px-6 md:px-14 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-14 mb-4">
+
+			  <!-- First Feature -->
+			  <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-100 rounded-lg overflow-hidden">
+			    <!-- Text Section -->
+			    <div class="p-4 sm:p-6 md:p-8 flex flex-col justify-center">
+			      <h2 class="font-bold text-xl sm:text-2xl md:text-[1.6em] lg:text-[1.8em] xl:text-2xl">
+			        Current Stocks
+			      </h2>
+			      <p class="text-gray-700 font-semibold text-sm sm:text-base md:text-lg mt-2">
+			        Limited stock. Buy now.
+			      </p>
+			      <a href="/stocks">
+			        <button class="bg-white text-black cursor-pointer w-full sm:w-auto px-3 sm:px-6 py-2 mt-3 font-semibold hover:bg-gray-200 transition ease-in-out text-sm sm:text-base">
+			          View Stocks
+			        </button>
+			      </a>
+			    </div>
+
+			    <!-- Image Section -->
+			    <div class="flex justify-center md:justify-end items-center">
+			      <img src="images/homepage/stock1.jpg" class="w-full md:w-[90%] lg:w-[80%] h-auto rounded-r-lg object-cover" alt="Stocks" />
+			    </div>
+			  </div>
+
+			  <!-- Second Feature -->
+			  <div class="grid grid-cols-1 md:grid-cols-2 bg-gray-100 rounded-lg overflow-hidden">
+			    <!-- Text Section -->
+			    <div class="p-4 sm:p-6 md:p-8 flex flex-col justify-center">
+			      <h2 class="font-bold text-xl sm:text-2xl md:text-[1.6em] lg:text-[1.8em] xl:text-2xl">
+			        Current Stocks
+			      </h2>
+			      <p class="text-gray-700 font-semibold text-sm sm:text-base md:text-lg mt-2">
+			        Limited stock. Buy now.
+			      </p>
+			      <a href="/stocks">
+			        <button class="bg-white text-black cursor-pointer w-full sm:w-auto px-3 sm:px-6 py-2 mt-3 font-semibold hover:bg-gray-200 transition ease-in-out text-sm sm:text-base">
+			          View Stocks
+			        </button>
+			      </a>
+			    </div>
+
+			    <!-- Image Section -->
+			    <div class="flex justify-center md:justify-end items-center">
+			      <img src="images/homepage/sh1.jpg" class="w-full md:w-[90%] lg:w-[80%] h-auto rounded-r-lg object-cover" alt="Shares" />
+			    </div>
+			  </div>
+
+			</div>
+
+
+			<!-- bottom slides section -->
+			<div class="px-14 mt-14 mb-5 relative">
+			  <!-- Scrollable cards (not actually scrollable in plain HTML) -->
+			  <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 no-scrollbar">
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/pw.jpg"
+			        alt="Powerwall"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <!-- Overlay -->
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Powerwall</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">
+			          Keep your lights on during outages
+			        </p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Buy Now
+			            </button>
+			          </a>
+			          <a href="/features">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-gray-200 transition">
+			              Learn More
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="snap-start flex-shrink-0 w-[80%] relative rounded-2xl overflow-hidden">
+			      <img
+			        src="images/homepage/sola.jpg"
+			        alt="Megapack"
+			        class="w-full h-[70vh] object-cover rounded-2xl"
+			      />
+			      <!-- Overlay -->
+			      <div class="absolute bottom-8 left-8 text-white">
+			        <h3 class="text-4xl font-bold">Megapack</h3>
+			        <p class="mt-2 text-lg font-semibold underline underline-offset-4 decoration-1">
+			          Large-scale energy storage
+			        </p>
+			        <div class="mt-4 flex gap-4">
+			          <a href="/signup">
+			            <button class="flex px-14 py-2 bg-[#2853c8] text-center text-white text-base font-semibold rounded-md hover:bg-[#2043a2] transition">
+			              Buy Now
+			            </button>
+			          </a>
+			          <a href="/features">
+			            <button class="flex px-14 py-2 bg-white text-center text-black text-base font-semibold rounded-md hover:bg-gray-200 transition">
+			              Learn More
+			            </button>
+			          </a>
+			        </div>
+			      </div>
+			    </div>
+
+			  </div>
+
+			  <!-- Dots (not functional in plain HTML) -->
+			  <div class="flex justify-center mt-4 gap-2">
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-800 scale-110"></button>
+			    <button class="w-3 h-3 rounded-full transition-all bg-gray-400"></button>
+			  </div>
+			</div>
+
+		</main>
+
+		<!-- footer -->
+		<footer class="bg-white border-t border-gray-200 mt-10">
+		  <div class="max-w-[1920px] w-full mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+		    <!-- Logo -->
+		    <div class="mb-4 md:mb-0">
+		      <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+		    </div>
+
+		    <!-- Links -->
+		    <ul class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-600">
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="/">Home</a>
+		      </li>
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="/stocks">Stocks</a>
+		      </li>
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="cars">Vehicles</a>
+		      </li>
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="/features">Features</a>
+		      </li>
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="/support">Support</a>
+		      </li>
+		      <li class="hover:text-blue-700 transition-all duration-300">
+		        <a href="/privacy">Privacy</a>
+		      </li>
+		    </ul>
+
+		    <!-- Copyright -->
+		    <div class="mt-4 md:mt-0 text-gray-500 text-xs md:text-sm">
+		      &copy; 2024 Stock. All rights reserved.
+		    </div>
+		  </div>
+		</footer>	
+
+
+
+		<script src="owlcarousel/docs/assets/vendors/jquery.min.js"></script>
+		<script src="owlcarousel/dist/owl.carousel.min.js"></script>
+
+		<script src="js/responsive-nav.js"></script>
+
+		<script>
+			var owl = $('.owl-carousel');
+			owl.owlCarousel({
+				items:1,
+				loop:true,
+				margin:10,
+				autoplay:true,
+				autoplayTimeout:2000,
+				autoplayHoverPause:false
+			});
+		</script>
+	<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!-- Profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Info</title>
+     <!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div class="flex">
+    <div class="hidden xl:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#1e1e1e] text-white p-6 pt-10 shadow-lg z-40">
+      <a href="/dashboard" class="text-3xl font-bold mb-10">
+        Stock
+      </a>
+      <nav class="flex flex-col gap-3">
+        <a href="/dashboard"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+          Dashboard
+        </a>
+        <a href="/stocks"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-stock-line"></i></span>
+          Stocks
+        </a>
+        <a href="/cars"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+          cars
+        </a>
+        <a href="/rewards"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+          Rewards
+        </a>
+        <a href="/transactions"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+          Transactions
+        </a>
+        <a href="/logout"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base text-gray-300 hover:bg-gray-700 hover:text-white transition-colors w-full text-left">
+          <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+          Logout
+		</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="fixed bottom-0 w-full bg-[#1e1e1e] text-white flex justify-around py-2 lg:hidden z-50">
+      <a href="/dashboard" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+        <!-- <span>Dashboard</span> -->
+      </a>
+      <a href="/stocks" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-stock-line"></i></span>
+        <!-- <span>Stocks</span> -->
+      </a>
+      <a href="/cars" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+        <!-- <span>cars</span> -->
+      </a>
+      <a href="/rewards" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+        <!-- <span>Rewards</span> -->
+      </a>
+      <a href="/transactions"
+        class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+        <!-- <span>Transactions</span> -->
+      </a>
+      <button class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+        <!-- <span>Logout</span> -->
+      </button>
+    </div>
+
+
+
+
+
+    <div class="w-full px-4 lg:ml-[18%] lg:w-[80%] lg:px-0 flex flex-col pt-14 bg-white min-h-screen">
+	    <div class="mb-8">
+	      <h1 class="text-3xl font-bold">Personal Info</h1>
+	      <p class="text-gray-600 mt-2">
+	        Here is your personal information. You can update it below.
+	      </p>
+	    </div>
+
+	    <div class="flex flex-col lg:flex-row gap-8">
+	      <!-- Profile Picture -->
+	      <div class="flex flex-col items-center lg:items-start gap-4">
+	        <div class="w-40 h-40 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
+	        	<!-- <img  src="" alt="Profile" class="w-full h-full object-cover"/> -->
+	          <i id="profilePicImg" class="ri-account-circle-2-line" style="font-size:8rem"></i>
+	        </div>
+	        <input type="file" accept="image/*" id="profilePicInput" class="border border-gray-300 rounded-lg px-4 py-2 w-40"/>
+	      </div>
+	      <!-- Info Sections -->
+	      <div class="flex-1 flex flex-col gap-6">
+	        <!-- Basic Info -->
+	        <div class="bg-gray-50 p-6 rounded-xl shadow-md relative">
+	          <h2 class="text-xl font-semibold mb-4 flex items-center justify-between">
+	            Basic Info
+	            <span>
+	              <button id="profileEditBasic" title="Edit Basic Info" style="background:none;border:none;cursor:pointer;">
+	                <svg class="inline text-gray-500" height="20" width="20" fill="currentColor" viewBox="0 0 20 20">
+	                <i class="ri-edit-box-line"></i></svg>
+	              </button>
+	              <button id="profileSaveBasic" title="Save Basic Info" style="display:none;background:none;border:none;cursor:pointer;">
+	                <svg class="inline text-green-600" height="20" width="20" fill="currentColor" viewBox="0 0 20 20"><i class="ri-save-line"></i></svg>
+	              </button>
+	            </span>
+	          </h2>
+	          <div id="profileBasicText" style="display:block;">
+	            <div>
+	              <p class="text-gray-500">Full Name</p>
+	              <p class="font-medium" id="profileDisplayName"></p>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Country</p>
+	              <p class="font-medium" id="profileDisplayCountry"></p>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Date of Birth</p>
+	              <p class="font-medium" id="profileDisplayDob"></p>
+	            </div>
+	          </div>
+	          <div id="profileBasicFields" class="flex flex-col gap-4" style="display:none;">
+	            <div>
+	              <p class="text-gray-500">Full Name</p>
+	              <div class="flex gap-2">
+	                <input type="text" id="profileFirstName" class="border border-gray-300 rounded-lg px-2 py-1 w-1/2" />
+	                <input type="text" id="profileLastName" class="border border-gray-300 rounded-lg px-2 py-1 w-1/2" />
+	              </div>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Country</p>
+	              <input type="text" id="profileCountry" class="border border-gray-300 rounded-lg px-2 py-1 w-full"/>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Date of Birth</p>
+	              <input type="date" id="profileDob" class="border border-gray-300 rounded-lg px-2 py-1 w-full"/>
+	            </div>
+	          </div>
+	        </div>
+	        <!-- Contact Info -->
+	        <div class="bg-gray-50 p-6 rounded-xl shadow-md relative">
+	          <h2 class="text-xl font-semibold mb-4 flex items-center justify-between">
+	            Contact Info
+	            <span>
+	              <button id="profileEditContact" title="Edit Contact Info" style="background:none;border:none;cursor:pointer;">
+	                <svg class="inline text-gray-500" height="20" width="20" fill="currentColor" viewBox="0 0 20 20"><i class="ri-edit-box-line"></i></svg>
+	              </button>
+	              <button id="profileSaveContact" title="Save Contact Info" style="display:none;background:none;border:none;cursor:pointer;">
+	                <svg class="inline text-green-600" height="20" width="20" fill="currentColor" viewBox="0 0 20 20"><i class="ri-save-line"></i></svg>
+	              </button>
+	            </span>
+	          </h2>
+	          <div id="profileContactText" style="display:block;">
+	            <div>
+	              <p class="text-gray-500">Email</p>
+	              <p class="font-medium" id="profileDisplayEmail"></p>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Phone Number</p>
+	              <p class="font-medium" id="profileDisplayPhone"></p>
+	            </div>
+	          </div>
+	          <div id="profileContactFields" class="flex flex-col gap-4" style="display:none;">
+	            <div>
+	              <p class="text-gray-500">Email</p>
+	              <input type="email" id="profileEmail" class="border border-gray-300 rounded-lg px-2 py-1 w-full"/>
+	            </div>
+	            <div>
+	              <p class="text-gray-500">Phone Number</p>
+	              <input type="text" id="profilePhone" class="border border-gray-300 rounded-lg px-2 py-1 w-full"/>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Grab dom elements
+  const user = JSON.parse(localStorage.getItem("currentUser")) || {};
+  // Populate fields on load
+  document.getElementById("profilePicImg").src = user.profilePic || "";
+  document.getElementById("profileFirstName").value = user.firstName || "";
+  document.getElementById("profileLastName").value = user.lastName || "";
+  document.getElementById("profileCountry").value = user.country || "";
+  document.getElementById("profileDob").value = user.dob || "";
+  document.getElementById("profileEmail").value = user.email || "";
+  document.getElementById("profilePhone").value = user.phone || "";
+
+  // Display text (when not editing)
+  document.getElementById("profileDisplayName").textContent = (user.firstName || "") + " " + (user.lastName || "");
+  document.getElementById("profileDisplayCountry").textContent = user.country || "";
+  document.getElementById("profileDisplayDob").textContent = user.dob || "";
+  document.getElementById("profileDisplayEmail").textContent = user.email || "";
+  document.getElementById("profileDisplayPhone").textContent = user.phone || "";
+
+  let editingBasic = false;
+  let editingContact = false;
+
+  // Toggle for basic info
+  document.getElementById("profileEditBasic").onclick = function() {
+    editingBasic = true;
+    document.getElementById("profileBasicFields").style.display = "flex";
+    document.getElementById("profileBasicText").style.display = "none";
+    document.getElementById("profileEditBasic").style.display = "none";
+    document.getElementById("profileSaveBasic").style.display = "inline-block";
+  };
+  document.getElementById("profileSaveBasic").onclick = function() {
+    editingBasic = false;
+    // Save values to user, update localStorage
+    user.firstName = document.getElementById("profileFirstName").value;
+    user.lastName = document.getElementById("profileLastName").value;
+    user.country = document.getElementById("profileCountry").value;
+    user.dob = document.getElementById("profileDob").value;
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    // Update display
+    document.getElementById("profileDisplayName").textContent = user.firstName + " " + user.lastName;
+    document.getElementById("profileDisplayCountry").textContent = user.country || "";
+    document.getElementById("profileDisplayDob").textContent = user.dob || "";
+    document.getElementById("profileBasicFields").style.display = "none";
+    document.getElementById("profileBasicText").style.display = "block";
+    document.getElementById("profileEditBasic").style.display = "inline-block";
+    document.getElementById("profileSaveBasic").style.display = "none";
+  };
+
+  // Toggle for contact info
+  document.getElementById("profileEditContact").onclick = function() {
+    editingContact = true;
+    document.getElementById("profileContactFields").style.display = "flex";
+    document.getElementById("profileContactText").style.display = "none";
+    document.getElementById("profileEditContact").style.display = "none";
+    document.getElementById("profileSaveContact").style.display = "inline-block";
+  };
+  document.getElementById("profileSaveContact").onclick = function() {
+    editingContact = false;
+    // Save values to user, update localStorage
+    user.email = document.getElementById("profileEmail").value;
+    user.phone = document.getElementById("profilePhone").value;
+    localStorage.setItem("currentUser", JSON.stringify(user));
+    // Update display
+    document.getElementById("profileDisplayEmail").textContent = user.email || "";
+    document.getElementById("profileDisplayPhone").textContent = user.phone || "";
+    document.getElementById("profileContactFields").style.display = "none";
+    document.getElementById("profileContactText").style.display = "block";
+    document.getElementById("profileEditContact").style.display = "inline-block";
+    document.getElementById("profileSaveContact").style.display = "none";
+  };
+
+  // Profile picture upload
+  document.getElementById("profilePicInput").addEventListener("change", function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+      user.profilePic = ev.target.result;
+      document.getElementById("profilePicImg").src = ev.target.result;
+      localStorage.setItem("currentUser", JSON.stringify(user));
+    };
+    reader.readAsDataURL(file);
+  });
+});
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

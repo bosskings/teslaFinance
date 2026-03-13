@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Features</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  </head>
+  <body class="flex flex-col min-h-screen bg-white">
+    
+    <!-- navbar.html -->
+    <nav class="bg-white shadow-md relative">
+      <!-- Centered Container -->
+      <div class="max-w-[1920px] w-full mx-auto flex items-center justify-between px-6 py-2 rounded-full">
+        <!-- Logo -->
+        <div>
+          <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Tesla-Stocks</h1>
+        </div>
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/">Home</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/stocks">Stocks</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="cars">Vehicles</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/features">Features</a>
+          </li>
+        </ul>
+        <!-- Social Icons -->
+        <div class="hidden md:flex items-center gap-5">
+          <a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out">
+            <i class="ri-user-3-line" style="font-size: 1.5em;"></i>
+          </a>
+        </div>
+        <!-- Mobile Hamburger -->
+        <div class="md:hidden flex items-center">
+          <button id="navbar-menu-toggle">
+            <i id="menu-icon" class="ri-menu-line" style="font-size: 1.75em;"></i>
+          </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-dropdown" class="hidden absolute top-full right-4 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg flex-col py-2 z-50">
+          <a href="/" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Home</a>
+          <a href="/stocks" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Stocks</a>
+          <a href="/cars" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Vehicles</a>
+          <a href="/features" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Features</a>
+          <div class="px-4 py-2 mt-2 border-t border-gray-200">
+            <a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out inline-block">
+              <i class="ri-user-3-line" style="font-size: 1.25em;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative flex justify-center bg-cover bg-center text-white" style="background-image: url('images/homepage/robo_right.avif')">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/10"></div>
+      <div class="relative text-center max-w-3xl px-6 py-24">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          Investors Relations
+        </h1>
+        <p class="text-lg md:text-xl font-medium mb-2">
+          Sign-up today to be among the people who built a better future. better outmostfare
+        </p>
+        <span class="text-lg md:text-xl font-semibold block">Your turn</span>
+        <div class="mt-8">
+          <a
+            href="/signup"
+            class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded text-sm font-semibold"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Invest in Your Future -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Invest in Your Future</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-10">
+          Giving chances to individuals to invest in the maximum production of solar resources and benefit from clean energy, long-term savings, and a sustainable future.
+        </p>
+        <div class="h-[80vh] overflow-hidden rounded-lg shadow-lg">
+          <img
+            src="images/homepage/price-solar-desktop.avif"
+            alt="solar panel"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tesla Solar Panels -->
+    <section class="bg-black text-white py-16">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+        <div class="w-full md:w-1/2 h-[60vh] overflow-hidden rounded-lg">
+          <img
+            src="images/homepage/sleek-durable-solar.avif"
+            alt="solar panels"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="w-full md:w-1/2 space-y-6">
+          <h2 class="text-3xl font-bold">Invest in Tesla Solar Panels</h2>
+          <p class="text-sm leading-relaxed text-gray-300">
+            Save money, gain energy independence, and protect the planet. Tesla solar panels cut electricity bills, store power for outages with Powerwall, and boost your property value, all while delivering sleek design and long-lasting performance. It's not just solar, it's a smart investment in your future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Powerwall Section -->
+    <section class="bg-black text-white py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="h-[70vh] overflow-hidden rounded-lg mb-10">
+          <img
+            src="images/homepage/storms-happen-desktop.avif"
+            alt="Powerwall"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold mb-2">
+            Storms Happen—Outages Don’t Have To
+          </h2>
+          <span class="block font-semibold mb-4">
+            Over 1 Million Installed Globally
+          </span>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Be among the Individuals who made money while Keeping your home and all appliances powered during an outage. When severe weather is forecast, Storm Watch will automatically charge Powerwall to its maximum capacity to prepare for an outage. When an outage occurs, Powerwall will help keep your solar system running or, if using grid power, will transition your home to stored energy instantly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optimus Robot -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row gap-10 items-center">
+        <div class="md:w-1/2 text-center md:text-left space-y-6">
+          <h2 class="text-3xl font-bold">Optimus 8</h2>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Optimus is a general-purpose robotic assistant designed to perform tasks that are repetitive, dangerous, or undesirable for humans. Powered by advanced AI, it can walk, climb stairs, lift and carry objects, as well as manipulate items autonomously.
+          </p>
+        </div>
+        <div class="relative md:w-1/2">
+          <div class="h-[70vh] overflow-hidden rounded-lg border border-gray-200">
+            <img
+              src="images/homepage/robo12_2.jpg"
+              alt="Optimus"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="absolute top-1/2 left-2/3 w-[200px] h-[200px] overflow-hidden rounded-lg shadow-lg border border-gray-300">
+            <img
+              src="images/homepage/robo12.jpg"
+              alt="Optimus"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-white border-t border-gray-200 mt-10">
+	      <div class="max-w-[1920px] w-full mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+	        <!-- Logo -->
+	        <div class="mb-4 md:mb-0">
+	          <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+	        </div>
+
+	        <!-- Copyright -->
+	        <div class="mt-4 md:mt-0 text-gray-500 text-xs md:text-sm">
+	          &copy; <span id="copyright-year"></span> Stock. All rights reserved.
+	        </div>
+	      </div>
+	    </footer>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

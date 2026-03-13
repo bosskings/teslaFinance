@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign In</title>
+    <!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <!-- navbar.html -->
+    <nav class="bg-white shadow-md relative">
+      <!-- Centered Container -->
+      <div class="max-w-[1920px] w-full mx-auto flex items-center justify-between px-6 py-2 rounded-full">
+        <!-- Logo -->
+        <div>
+          <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+        </div>
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-8 text-sm">
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/">Home</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/stocks">Stocks</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="cars">Vehicles</a>
+          </li>
+          <li class="text-[#000000] hover:text-blue-700 transition-all duration-300 ease-in-out font-bold">
+            <a href="/features">Features</a>
+          </li>
+        </ul>
+        <!-- Social Icons -->
+        <div class="hidden md:flex items-center gap-5">
+          <a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out">
+            <i class="ri-user-3-line" style="font-size: 1.5em;"></i>
+          </a>
+        </div>
+        <!-- Mobile Hamburger -->
+        <div class="md:hidden flex items-center">
+          <button id="navbar-menu-toggle">
+            <i id="menu-icon" class="ri-menu-line" style="font-size: 1.75em;"></i>
+          </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-dropdown" class="hidden absolute top-full right-4 mt-2 w-48 bg-white border border-gray-200 rounded-xl shadow-lg flex-col py-2 z-50">
+          <a href="/" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Home</a>
+          <a href="/stocks" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Stocks</a>
+          <a href="/cars" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Vehicles</a>
+          <a href="/features" class="px-4 py-2 text-black hover:bg-gray-100 transition-all duration-200 block">Features</a>
+          <div class="px-4 py-2 mt-2 border-t border-gray-200">
+            <a href="/signup" class="hover:scale-110 transition-all duration-300 ease-in-out inline-block">
+              <i class="ri-user-3-line" style="font-size: 1.25em;"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div>
+
+      <!-- login form -->
+      <div class="h-screen flex flex-col items-center justify-center px-4" style="margin-top:-3%;">
+        <div class="w-full sm:w-[73%] md:w-[53%] lg:w-[33%] bg-white p-6 rounded-lg shadow-md">
+          <h2 class="font-semibold text-xl sm:text-3xl text-black">Sign In</h2>
+          <p class="text-gray-500 text-sm mt-1">Please login to continue</p>
+
+          <form class="w-full flex flex-col items-center mt-9" method="POST">
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              class="w-full px-4 py-4 rounded-md bg-gray-200 placeholder:text-sm focus:border-blue-800 outline-none mb-7"
+              required
+            />
+
+            <div class="relative w-full mb-4">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                class="w-full px-4 py-4 rounded-md bg-gray-200 placeholder:text-sm focus:border-blue-800 outline-none"
+                required
+              />
+              <!-- Password eye/eye-slash toggle, requires JavaScript to work in plain HTML -->
+              <span class="absolute right-3 top-5.5 cursor-pointer" onclick="togglePasswordVisibility(event)">
+                <!-- Insert your own eye/eye-slash icon SVG here -->
+                👁️
+              </span>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-3 w-full h-[52px] p-3 rounded-md font-medium text-sm transition bg-blue-800 text-[#FBDDBB] active:bg-blue-900 active:scale-95"
+            >
+              LOGIN
+            </button>
+          </form>
+
+          <!-- Link to signup -->
+          <div class="flex items-center justify-center mt-5">
+            <p class="font-[400] text-sm">
+              Don’t have an account?
+              <a href="/signup" class="text-blue-800 font-bold text-sm hover:text-blue-900 ml-1">SIGN UP</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-white border-t border-gray-200 mt-10">
+	      <div class="max-w-[1920px] w-full mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+	        <!-- Logo -->
+	        <div class="mb-4 md:mb-0">
+	          <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+	        </div>
+
+	        <!-- Copyright -->
+	        <div class="mt-4 md:mt-0 text-gray-500 text-xs md:text-sm">
+	          &copy; <span id="copyright-year"></span> Stock. All rights reserved.
+	        </div>
+	      </div>
+	    </footer>
+
+    <script src="js/responsive-nav.js"></script>
+    
+    <script>
+      // Optional JS for the eye icon toggle in plain HTML
+      function togglePasswordVisibility(event) {
+        event.preventDefault();
+        const pwdInput = event.target.parentNode.querySelector('input[type="password"], input[type="text"]');
+        if (pwdInput) {
+          if (pwdInput.type === "password") {
+            pwdInput.type = "text";
+            event.target.textContent = "🙈"; // Replace with eye-slash icon
+          } else {
+            pwdInput.type = "password";
+            event.target.textContent = "👁️"; // Replace with eye icon
+          }
+        }
+      }
+    </script>
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

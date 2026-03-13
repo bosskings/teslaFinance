@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Deposit</title>
+    
+      <!-- Optional: Tailwind CDN for styling (remove if not needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: Icons (using Heroicons and Remixicon for closest equivalents) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-50">
+    <!-- side Nav -->
+    <div class="hidden xl:flex flex-col fixed left-0 top-0 h-full w-64 bg-[#1e1e1e] text-white p-6 pt-10 shadow-lg z-40">
+      <a href="/dashboard" class="text-3xl font-bold mb-10">
+        Stock
+      </a>
+      <nav class="flex flex-col gap-3">
+        <a href="/dashboard"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+          Dashboard
+        </a>
+        <a href="/stocks"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-stock-line"></i></span>
+          Stocks
+        </a>
+        <a href="/cars"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+          cars
+        </a>
+        <a href="/rewards"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+          Rewards
+        </a>
+        <a href="/transactions"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base transition-colors text-gray-300 hover:bg-gray-700 hover:text-white">
+          <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+          Transactions
+        </a>
+        <a href="/logout"
+          class="flex items-center gap-3 px-3 py-2 rounded-md text-base text-gray-300 hover:bg-gray-700 hover:text-white transition-colors w-full text-left">
+          <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+          Logout
+		</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Bottom Nav -->
+    <div class="fixed bottom-0 w-full bg-[#1e1e1e] text-white flex justify-around py-2 lg:hidden z-50">
+      <a href="/dashboard" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-dashboard-line"></i></span>
+        <!-- <span>Dashboard</span> -->
+      </a>
+      <a href="/stocks" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-stock-line"></i></span>
+        <!-- <span>Stocks</span> -->
+      </a>
+      <a href="/cars" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-roadster-fill"></i></span>
+        <!-- <span>cars</span> -->
+      </a>
+      <a href="/rewards" class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-gift-2-fill"></i></span>
+        <!-- <span>Rewards</span> -->
+      </a>
+      <a href="/transactions"
+        class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-anticlockwise-2-line"></i></span>
+        <!-- <span>Transactions</span> -->
+      </a>
+      <button class="flex flex-col items-center text-xs text-gray-400 hover:text-white transition-colors">
+        <span class="text-xl"><i class="ri-logout-box-r-line"></i></span>
+        <!-- <span>Logout</span> -->
+      </button>
+    </div>
+
+
+      <!-- Main Content -->
+      <div class="w-full px-4 md:px-4 xl:ml-[18%] xl:w-[80%] lg:px-10 xl:px-4 pt-10 pb-10 flex flex-col bg-white min-h-screen justify-center items-center bg-gray-100">
+      
+        <div class="w-full flex sm:flex-row items-center justify-between mb-6 gap-4 sm:gap-2 mt-0">
+          <div class="flex items-center gap-3 text-center sm:text-left">
+            <a href="profile.html">
+              <!-- ProfilePic or Fallback SVG icon -->
+              <!-- Example fallback SVG icon (FaUserCircle style) -->
+              <svg class="w-12 h-12 rounded-full object-cover cursor-pointer text-gray-600" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M12 14c-5 0-8 2.5-8 5v1h16v-1c0-2.5-3-5-8-5z"/></svg>
+            </a>
+            <h2 class="m-0 text-2xl md:text-3xl font-bold">
+              Hi, Guest
+            </h2>
+          </div>
+          <div>
+            <a href="/help">
+              <!-- Help Icon (IoIosHelpCircleOutline style as SVG) -->
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 hover:text-black transition" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor"/><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M12 17v.01M12 13c1.5 0 2-1.5 2-2s-.5-2-2-2-1.5-1.5-2-2"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Rewards Cards -->
+        <div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between my-6 gap-6">
+          <!-- Referral Bonus Card -->
+          <div class="w-full md:w-[40%] bg-black text-white p-9 rounded-xl shadow-lg flex flex-col gap-4">
+            <h3 class="text-xl font-medium">Referral Bonus</h3>
+            <p class="text-2xl font-semibold mt-2">$350.00</p>
+            <button class="bg-white text-black px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-all">
+              Withdraw
+            </button>
+          </div>
+
+          <!-- Company Bonus Card -->
+          <div class="w-full md:w-[40%] bg-gray-100 p-9 rounded-xl shadow-lg flex flex-col gap-4">
+            <h3 class="text-xl font-medium">Company Bonus</h3>
+            <p class="text-2xl font-semibold mt-2">$150.00</p>
+            <button class="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-all">
+              Claim Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Referral Link Section -->
+        <div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
+          <!-- Referral Link -->
+          <div class="p-6 h-36 bg-gray-50 rounded-xl flex flex-col gap-4">
+            <h3 class="text-xl font-medium text-black">Your Referral Link</h3>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <input
+                type="text"
+                value="https://example.com/ref/XXXXXXXX"
+                readonly
+                class="flex-1 border border-gray-300 rounded-lg px-4 py-2"
+              />
+              <button
+                class="bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-all"
+                onclick="navigator.clipboard.writeText('https://example.com/ref/XXXXXXXX'); alert('Referral link copied!');"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+          <!-- Image -->
+          <div class="rounded-xl overflow-hidden">
+            <img
+              src="images/imgs/stock/reward.jpg"
+              alt="Rewards Banner"
+              class="w-full h-full object-cover rounded-xl"
+            />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- footer -->
+      <footer class="bg-white border-t border-gray-200 mt-10">
+        <div class="max-w-[1920px] w-full mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
+          <!-- Logo -->
+          <div class="mb-4 md:mb-0">
+            <h1 class="font-bold text-2xl md:text-[1.8em] lg:text-[2em]">Stocks</h1>
+          </div>
+
+          <!-- Links -->
+          <ul class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-gray-600">
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/">Home</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/stocks">Stocks</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="cars">Vehicles</a>
+            </li>
+            <li class="hover:text-blue-700 transition-all duration-300">
+              <a href="/features">Features</a>
+            </li>
+            
+          </ul>
+
+          <!-- Copyright -->
+          <div id="c" class="mt-4 md:mt-0 text-gray-500 text-xs md:text-sm">
+	        &copy; 2024 Stock. All rights reserved.
+	      </div>
+		  <script>
+			const e=document.getElementById('c');e.innerHTML=e.innerHTML.replace(/\d{4}/, new Date().getFullYear());
+		  </script>
+        </div>
+      </footer>
+
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68f8086df6f81d194f784601/1j84e1rtu';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
+
